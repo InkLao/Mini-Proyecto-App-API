@@ -2,12 +2,131 @@
 
 .encabezado{
     display: flex;
-    flex-direction: row; /* Elementos en columna */
-    align-items: center; /* Centrado horizontal */
-    justify-content: center; /* Centrado vertical */
-    text-align: center; /* Centra el texto */
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
 }
 
+
+.recomendacion{
+    margin-top: 40px;
+    text-align: center;
+
+}
+
+
+.librosRandom{
+
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    margin: 15px auto;
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+
+    flex-direction: row;
+
+
+}
+
+.librosRandom #imagen1{
+    align-items: center !important;
+    height: 130px;
+    max-width: 120px;
+    border-radius: 10px;
+    margin-right: 20px;
+
+}
+
+
+
+.librosRandom:hover {
+    transform: scale(1.02);
+}
+
+/*
+
+.librosRandom #imagen2{
+
+    height: 130px;
+    max-width: 130px;
+    border-radius: 10px;
+    margin-right: 20px;
+
+}
+
+.librosRandom #imagen3{
+
+    height: 130px;
+    max-width: 120px;
+    border-radius: 10px;
+    margin-right: 20px;
+
+}
+
+.random1{
+    border-radius: 8px;    
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+
+        align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    max-height: 300px;
+    width: 100%;
+}
+
+.librosRandom #imagen2{
+
+    height: 130px;
+    max-width: 120px;
+    border-radius: 10px;
+    margin-right: 20px;
+
+}
+
+.random2{
+    border-radius: 8px;    
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+max-height: 300px;
+    width: 100%; 
+}
+
+.librosRandom #imagen3{
+
+    height: 130px;
+    max-width: 120px;
+    border-radius: 10px;
+    margin-right: 20px;
+
+}
+
+.random3{
+    border-radius: 8px;    
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+
+max-height: 300px;
+    width: 100%;
+}
+
+*/
 
 body h1 {
     margin-bottom: 20px;
