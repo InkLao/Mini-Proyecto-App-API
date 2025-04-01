@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Libros</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        input { padding: 10px; width: 60%; margin-bottom: 10px; }
+        button { padding: 10px; cursor: pointer; }
+        .book { border: 1px solid #ddd; padding: 15px; margin: 10px auto; width: 50%; }
+        img { max-width: 150px; display: block; margin: 0 auto; }
+    </style>
+</head>
+<body>
+    <h1>Buscador de Libros - Open Library</h1>
+    <input type="text" id="search" placeholder="Ingrese el título del libro...">
+    <button onclick="searchBook()">Buscar</button>
+    <div id="results"></div>
+
+    <script>
+        async function searchBook() {
+            let query = document.getElementById("search").value;
+            let response = await fetch(`https://openlibrary.org/search.json?title=${query}`);
+            let data = await response.json();
+            let resultsDiv = document.getElementById("results");
+            resultsDiv.innerHTML = "";
+            
+            if (data.docs.length === 0) {
+                resultsDiv.innerHTML = "<p>No se encontraron libros</p>";
+                return;
+            }
+            
+            data.docs.slice(0, 5).forEach(book => {
+                let coverID = book.cover_i ? `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg` : 'https://via.placeholder.com/150';
+                resultsDiv.innerHTML += `
+                    <div class="book">
+                        <img src="${coverID}" alt="Portada del libro">
+                        <h3>${book.title}</h3>
+                        <p><strong>Autor:</strong> ${book.author_name ? book.author_name.join(", ") : "Desconocido"}</p>
+                    </div>
+                `;
+            });
+        }
+    </script>
+</body>
+</html>
