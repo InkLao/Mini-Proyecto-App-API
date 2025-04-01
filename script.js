@@ -19,8 +19,10 @@ boton.onclick = async function(){
                 resultsDiv.innerHTML += `
                     <div class="book">
                         <img src="${coverID}" alt="Portada del libro">
-                        <h3>${book.title}</h3>
-                        <p><strong>Autor:</strong> ${book.author_name ? book.author_name.join(", ") : "Desconocido"}</p>
+                        <div class="book-info">
+                            <h3>${book.title}</h3>
+                            <p><strong>Autor:</strong> ${book.author_name ? book.author_name.join(", ") : "Desconocido"}</p>
+                        </div>
                     </div>
                 `;
             });
